@@ -9,6 +9,12 @@ font-family: 'Bebas Neue', cursive; */
     font-weight: 400;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(219, 216, 216, 0.212);
+}
+
 .head {
     display: flex;
     flex-direction: row;
@@ -17,11 +23,17 @@ font-family: 'Bebas Neue', cursive; */
     padding: 1rem;
     box-sizing: border-box;
     justify-content: space-between;
+    position: relative;
+    margin-right: 40px;
+    margin-left: 40px;
 }
 
 .logo-img {
-    width: 10%;
+    width: auto;
     cursor: pointer;
+    height: 50px;
+    align-self: center;
+    justify-self: center;
 }
 
 .menu-list {
@@ -40,13 +52,86 @@ a {
     text-decoration: none;
     font-size: 20px;
     color: black;
+    transition: .3s ease;
+}
+
+a:hover {
+    color: orange
 }
 
 #btn-mobile {
     display: none;
 }
 
+.icon-cart {
+    font-size: 20px;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    justify-content: center;
+}
+
+.foco {
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.title {
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-size: 5rem;
+}
+
+.btn {
+    padding: 20px;
+    padding-right: 45px;
+    padding-left: 45px;
+    border: none;
+    border-radius: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: orange;
+    transition: all 0.2s ease;
+    width: 60%;
+    animation: updown .5s ease-in-out infinite alternate;
+    position: absolute;
+    top: 115px;
+    left: 20%;
+}
+
+.btn:hover {
+    background-color: rgb(255, 126, 20);
+}
+
+.footer {
+    background-color: rgb(26, 25, 25);
+    padding: 15px;
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+}
+
 @media (max-width: 600px) {
+    .title {
+        font-size: 3rem;
+    }
+    .btn {
+        width: 70%;
+        top: 90px;
+        left: 15%;
+    }
+    .head {
+        margin: 0;
+    }
     #btn-mobile {
         border: none;
         font-size: 25px;
@@ -86,6 +171,7 @@ a {
         width: 100%;
         text-align: center;
         transition: all 0.3s ease;
+        color: black;
     }
     .menu-list a:hover {
         background-color: orangered;
@@ -105,37 +191,11 @@ a {
     }
 }
 
-.foco {
-    align-self: center;
-}
-
-.btn {
-    padding: 20px;
-    padding-right: 45px;
-    padding-left: 45px;
-    border: none;
-    border-radius: 50px;
-    font-size: 25px;
-    cursor: pointer;
-    background-color: orange;
-    transition: all 0.2s ease;
-}
-
-.icon-cart {
-    font-size: 20px;
-}
-
-.btn:hover {
-    background-color: rgb(255, 126, 20);
-}
-
-.title {
-    font-family: 'Alfa Slab One', cursive;
-    letter-spacing: 1.5px;
-}
-
-.landing {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+@keyframes updown {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: 30px;
+    }
 }
